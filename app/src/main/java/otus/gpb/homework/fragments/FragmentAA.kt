@@ -14,8 +14,8 @@ class FragmentAA : Fragment(R.layout.fragment_a_a) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.fragmentABButton).setOnClickListener() {
-            childFragmentManager.beginTransaction()
-                .replace(R.id.fragmentAAView, FragmentAB.create(ColorGenerator.generateColor()), null)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentAView, FragmentAB.create(ColorGenerator.generateColor()), null)
                 .addToBackStack(null)
                 .commit()
         }
